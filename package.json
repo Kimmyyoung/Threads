@@ -22,6 +22,7 @@
     "mongose": "^0.0.2-security",
     "next": "latest",
     "react": "latest",
+    "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "latest",
     "react-hook-form": "^7.46.2",
     "svix": "^1.12.0",

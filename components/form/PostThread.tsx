@@ -3,7 +3,8 @@
 import * as z from "zod";
 import { useForm } from "react-hook-form";
 import { useOrganization } from "@clerk/nextjs";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { zodResolver } from '@hookform/resolvers/zod';
+
 import { usePathname, useRouter } from "next/navigation";
 
 import {
@@ -29,7 +30,7 @@ function PostThread({ userId }: Props) {
   const router = useRouter();
 
   const form = useForm({
-    resolver: zodResolver(),
+    resolver: zodResolver(ThreadValidation),
     defaultValues: {
       thread: '',
       accountId : userId,
