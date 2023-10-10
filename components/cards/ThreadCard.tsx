@@ -1,34 +1,34 @@
-
-import Link from '@/node_modules/next/link'
-
 import Image from "next/image";
+import Link from "next/link";
+
+import { formatDateString } from "@/lib/utils";
+// import DeleteThread from "../forms/DeleteThread";
 
 interface Props {
-  key: string,
-  id : string, 
-  currentUserId : string,
-  parentId : string | null, 
-  content : string, 
+  id: string;
+  currentUserId: string;
+  parentId: string | null;
+  content: string;
   author: {
-    name: string,
-    image: string,
-    id: string
-  },
+    name: string;
+    image: string;
+    id: string;
+  };
   community: {
-    name: string,
-    id: string,
-    image: string
-  } | null,
-  createdAt : string,
+    id: string;
+    name: string;
+    image: string;
+  } | null;
+  createdAt: string;
   comments: {
     author: {
-      image: string,
-    },
-  }[],
-  isComment? : boolean
+      image: string;
+    };
+  }[];
+  isComment?: boolean;
 }
-const ThreadCard = ({
-  key,
+
+function ThreadCard({
   id,
   currentUserId,
   parentId,
@@ -37,28 +37,9 @@ const ThreadCard = ({
   community,
   createdAt,
   comments,
-  isComment
-}: Props) => {
-
-
-  // const [copySuccess, setCopySuccess] = useState(false);
-
-  // function copyToClipboard() {
-  //   const copyText = `/profile/${author.id}`;
-  //   navigator.clipboard.writeText(copyText)
-  //     .then(() => {
-  //       setCopySuccess(true);
-  //       setTimeout(() => setCopySuccess(false), 2000);
-  //     })
-  //     .catch((error) => {
-  //       console.error('Error copying to clipboard: ', error);
-  //     });
-  // }
-
-  console.log(author);
-
+  isComment,
+}: Props) {
   return (
-  <>
     <article
       className={`flex w-full flex-col rounded-xl ${
         isComment ? "px-0 xs:px-7" : "bg-dark-2 p-7"
@@ -91,11 +72,11 @@ const ThreadCard = ({
             <div className={`${isComment && "mb-10"} mt-5 flex flex-col gap-3`}>
               <div className='flex gap-3.5'>
                 <Image
-                    src='/assets/heart-gray.svg'
-                    alt='heart'
-                    width={24}
-                    height={24}
-                    className='cursor-pointer object-contain'
+                  src='/assets/heart-gray.svg'
+                  alt='heart'
+                  width={24}
+                  height={24}
+                  className='cursor-pointer object-contain'
                 />
                 <Link href={`/thread/${id}`}>
                   <Image
@@ -106,16 +87,13 @@ const ThreadCard = ({
                     className='cursor-pointer object-contain'
                   />
                 </Link>
-               
                 <Image
-                    src='/assets/repost.svg'
-                    alt='repost'
-                    width={24}
-                    height={24}
-                    className='cursor-pointer object-contain'
-                    value={`/profile/${author.id}`}
+                  src='/assets/repost.svg'
+                  alt='heart'
+                  width={24}
+                  height={24}
+                  className='cursor-pointer object-contain'
                 />
-                  
                 <Image
                   src='/assets/share.svg'
                   alt='heart'
@@ -135,6 +113,14 @@ const ThreadCard = ({
             </div>
           </div>
         </div>
+
+        {/* <DeleteThread
+          threadId={JSON.stringify(id)}
+          currentUserId={currentUserId}
+          authorId={author.id}
+          parentId={parentId}
+          isComment={isComment}
+        /> */}
       </div>
 
       {!isComment && comments.length > 0 && (
@@ -178,8 +164,7 @@ const ThreadCard = ({
         </Link>
       )}
     </article>
-    </>
-  )
+  );
 }
 
-export default ThreadCard
+export default ThreadCard;
