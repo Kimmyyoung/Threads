@@ -1,12 +1,6 @@
 
 import { currentUser } from "@clerk/nextjs";
 import { fetchUser, fetchUserPosts, fetchUsers } from "@/lib/actions/user.action";
-
-import { profileTabs } from "@/constants";
-import Image from 'next/image';
-import ThreadsTab from '@/components/shared/ThreadsTab';
-
-
 import UserCard from '@/components/cards/UserCard';
 
 async function Page() {   
@@ -20,7 +14,7 @@ async function Page() {
     userId: user.id,
     searchString: '',
     pageNumber: 1,
-    pageSize: 25
+    pageSize: 25,
   });
 
   return (
