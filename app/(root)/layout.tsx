@@ -10,9 +10,11 @@ import Bottombar from "@/components/shared/Bottombar";
 
 const inter = Inter({ subsets: ["latin"] });
 
+export const dynamic = 'force-dynamic'
+
 export const metadata: Metadata = {
   title: "Threads",
-  describtion: "A next.js 13 Meta Threads Application",
+  description: "A next.js 13 Meta Threads Application",
 };
 
 export default function RootLayout({
