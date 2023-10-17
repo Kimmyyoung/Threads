@@ -21,7 +21,7 @@
     "lucide-react": "^0.279.0",
     "mongoose": "^7.5.3",
     "mongose": "^0.0.2-security",
-    "next": "latest",
+    "next": "^13.4.19",
     "react": "latest",
     "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "latest",
