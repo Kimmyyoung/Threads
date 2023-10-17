@@ -1,6 +1,6 @@
 import { currentUser } from "@clerk/nextjs";
 import { fetchUser, getActivity } from '@/lib/actions/user.action';
-import Image from 'next/Image';
+import Image from 'next/image';
 import Link from 'next/link'
 
 
