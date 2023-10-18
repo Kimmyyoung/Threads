@@ -39,6 +39,8 @@
     "autoprefixer": "latest",
     "postcss": "latest",
     "tailwindcss": "^3.3.3",
-    "typescript": "latest"
+    "typescript": "latest",
+    "checkly": "latest",
+    "ts-node": "latest"
   }
 }
